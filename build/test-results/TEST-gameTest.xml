@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="gameTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2016-04-22T06:51:13" hostname="Lakis-Air.home" time="0.004">
+<testsuite name="gameTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2016-04-22T06:52:44" hostname="Lakis-Air.home" time="0.005">
   <properties/>
-  <testcase name="changeVowel_changeOneVowelAtoHyphen_String" classname="gameTest" time="0.003"/>
+  <testcase name="changeVowel_changeOneVowelUtoHyphen_String" classname="gameTest" time="0.003"/>
+  <testcase name="changeVowel_changeOneVowelAtoHyphen_String" classname="gameTest" time="0.0"/>
   <testcase name="changeVowel_changeOneVowelItoHyphen_String" classname="gameTest" time="0.0"/>
   <testcase name="changeVowel_changeOneVowelOtoHyphen_String" classname="gameTest" time="0.0"/>
   <testcase name="changeVowel_changeOneVowelEtoHyphen_String" classname="gameTest" time="0.0"/>

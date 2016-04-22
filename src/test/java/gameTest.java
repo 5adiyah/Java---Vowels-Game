@@ -30,4 +30,11 @@ public void changeVowel_changeOneVowelOtoHyphen_String() {
   String expected = "d-g" ;
   assertEquals(expected, gameTest.changeVowel("dog"));
   }
+
+  @Test
+public void changeVowel_changeOneVowelUtoHyphen_String() {
+  Game gameTest = new Game();
+  String expected = "r-n" ;
+  assertEquals(expected, gameTest.changeVowel("run"));
+  }
 }
