@@ -16,4 +16,11 @@ public void changeVowel_changeOneVowelEtoHyphen_String() {
   String expected = "p-t" ;
   assertEquals(expected, gameTest.changeVowel("pet"));
   }
+
+  @Test
+public void changeVowel_changeOneVowelItoHyphen_String() {
+  Game gameTest = new Game();
+  String expected = "s-t" ;
+  assertEquals(expected, gameTest.changeVowel("sit"));
+  }
 }
