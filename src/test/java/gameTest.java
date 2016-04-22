@@ -58,6 +58,13 @@ public void changeVowel_handleUpperCaseVowels_String() {
   String expected = "c-t" ;
   assertEquals(expected, gameTest.changeVowel("cAt"));
   }
+
+  @Test
+public void checkGuess_compareUserGuessToOriginalPhrase_Boolean() {
+  Game gameTest = new Game();
+  Boolean expected = true;
+  assertEquals(expected, gameTest.checkGuess("cat", "cat"));
+  }
 }
 
 //To Add: Capitalize first letter

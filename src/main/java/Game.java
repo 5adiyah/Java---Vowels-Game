@@ -29,10 +29,11 @@ public class Game {
     get("/guess", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
 
-      String userInput = request.queryParams("guess");
+      String guessPhrase = request.queryParams("guess");
+      String originalPhrase = request.queryParams("phrase");
       Game changeVowel = new Game();
-      //String guess = Game.checkGuess(userInput);
-      //model.put("guess", guess);
+      Boolean guess = Game.checkGuess(originalPhrase, guessPhrase);
+      model.put("guess", guess);
 
       model.put("template", "templates/guess.vtl");
       return new ModelAndView(model, "templates/layout.vtl");
@@ -55,8 +56,6 @@ public class Game {
            splittedInput[i].equals("u") ||
            splittedInput[i].equals("U") ){
         splittedInput[i] = "-";
-      } else if(splittedInput[i].equals(" ")){
-        splittedInput[i] = "               ";
       }
       newInput = newInput + splittedInput[i];
     }
@@ -64,5 +63,18 @@ public class Game {
     input = newInput;
     return input;
   }
+
+  public static Boolean checkGuess(String original, String guess) {
+    Game changeVowel = new Game();
+    String oldPhrase = Game.changeVowel(original);
+    String newPhrase = Game.changeVowel(guess);
+
+    if(oldPhrase.equals(newPhrase)){
+      return true;
+    } else {
+      return false;
+    }
+
+}
 
 }
