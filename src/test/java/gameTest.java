@@ -23,4 +23,11 @@ public void changeVowel_changeOneVowelItoHyphen_String() {
   String expected = "s-t" ;
   assertEquals(expected, gameTest.changeVowel("sit"));
   }
+
+  @Test
+public void changeVowel_changeOneVowelOtoHyphen_String() {
+  Game gameTest = new Game();
+  String expected = "d-g" ;
+  assertEquals(expected, gameTest.changeVowel("dog"));
+  }
 }

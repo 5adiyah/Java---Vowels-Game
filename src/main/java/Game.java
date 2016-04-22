@@ -33,7 +33,8 @@ public class Game {
     for(Integer i = 0; i < splittedInput.length; i++){
       if(splittedInput[i].equals("a") ||
          splittedInput[i].equals("e") ||
-         splittedInput[i].equals("i")){
+         splittedInput[i].equals("i") ||
+         splittedInput[i].equals("o")){
         splittedInput[i] = "-";
       }
       newInput = newInput + splittedInput[i];
