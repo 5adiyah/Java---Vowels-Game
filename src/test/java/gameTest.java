@@ -9,4 +9,11 @@ public void changeVowel_changeOneVowelAtoHyphen_String() {
   String expected = "c-t" ;
   assertEquals(expected, gameTest.changeVowel("cat"));
   }
+
+  @Test
+public void changeVowel_changeOneVowelEtoHyphen_String() {
+  Game gameTest = new Game();
+  String expected = "p-t" ;
+  assertEquals(expected, gameTest.changeVowel("pet"));
+  }
 }

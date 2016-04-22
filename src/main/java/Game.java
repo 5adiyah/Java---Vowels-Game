@@ -31,7 +31,8 @@ public class Game {
     String newInput = "";
 
     for(Integer i = 0; i < splittedInput.length; i++){
-      if(splittedInput[i].equals("a")){
+      if(splittedInput[i].equals("a") ||
+         splittedInput[i].equals("e")){
         splittedInput[i] = "-";
       }
       newInput = newInput + splittedInput[i];
