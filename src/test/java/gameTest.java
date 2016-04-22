@@ -44,6 +44,13 @@ public void changeVowel_changeMultipleVowelstoHyphen_String() {
   String expected = "-bst-nt---s" ;
   assertEquals(expected, gameTest.changeVowel("abstentious"));
   }
+
+  @Test
+public void changeVowel_handleInputOfSentences_String() {
+  Game gameTest = new Game();
+  String expected = "H- th-r- h-w -r- y--" ;
+  assertEquals(expected, gameTest.changeVowel("Hi there how are you"));
+  }
 }
 
 //To Add: Capitalize first letter
