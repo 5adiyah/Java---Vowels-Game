@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="gameTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2016-04-22T07:00:26" hostname="Lakis-Air.home" time="0.005">
+<testsuite name="gameTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2016-04-22T07:11:16" hostname="Lakis-Air.home" time="0.009">
   <properties/>
   <testcase name="changeVowel_changeOneVowelUtoHyphen_String" classname="gameTest" time="0.003"/>
-  <testcase name="changeVowel_changeMultipleVowelstoHyphen_String" classname="gameTest" time="0.0"/>
+  <testcase name="changeVowel_handleUpperCaseVowels_String" classname="gameTest" time="0.0"/>
+  <testcase name="changeVowel_changeMultipleVowelstoHyphen_String" classname="gameTest" time="0.001"/>
   <testcase name="changeVowel_changeOneVowelAtoHyphen_String" classname="gameTest" time="0.0"/>
   <testcase name="changeVowel_changeOneVowelItoHyphen_String" classname="gameTest" time="0.0"/>
   <testcase name="changeVowel_changeOneVowelOtoHyphen_String" classname="gameTest" time="0.0"/>
-  <testcase name="changeVowel_handleInputOfSentences_String" classname="gameTest" time="0.0"/>
-  <testcase name="changeVowel_changeOneVowelEtoHyphen_String" classname="gameTest" time="0.0"/>
+  <testcase name="changeVowel_handleInputOfSentences_String" classname="gameTest" time="0.001"/>
+  <testcase name="changeVowel_changeOneVowelEtoHyphen_String" classname="gameTest" time="0.001"/>
   <system-out><![CDATA[r-n
+c-t
 -bst-nt---s
 c-t
 s-t

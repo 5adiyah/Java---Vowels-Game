@@ -7,7 +7,7 @@ public class gameTest {
 public void changeVowel_changeOneVowelAtoHyphen_String() {
   Game gameTest = new Game();
   String expected = "c-t" ;
-  assertEquals(expected, gameTest.changeVowel("cat"));
+  assertEquals(expected, gameTest.changeVowel("cAt"));
   }
 
   @Test
@@ -50,6 +50,13 @@ public void changeVowel_handleInputOfSentences_String() {
   Game gameTest = new Game();
   String expected = "H- th-r- h-w -r- y--" ;
   assertEquals(expected, gameTest.changeVowel("Hi there how are you"));
+  }
+
+  @Test
+public void changeVowel_handleUpperCaseVowels_String() {
+  Game gameTest = new Game();
+  String expected = "c-t" ;
+  assertEquals(expected, gameTest.changeVowel("cAt"));
   }
 }
 

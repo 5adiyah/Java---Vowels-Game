@@ -31,11 +31,16 @@ public class Game {
     String newInput = "";
 
     for(Integer i = 0; i < splittedInput.length; i++){
-      if(splittedInput[i].equals("a") ||
-         splittedInput[i].equals("e") ||
-         splittedInput[i].equals("i") ||
-         splittedInput[i].equals("o") ||
-         splittedInput[i].equals("u")){
+      if ( splittedInput[i].equals("a") ||
+           splittedInput[i].equals("A") ||
+           splittedInput[i].equals("e") ||
+           splittedInput[i].equals("E") ||
+           splittedInput[i].equals("i") ||
+           splittedInput[i].equals("I") ||
+           splittedInput[i].equals("o") ||
+           splittedInput[i].equals("O") ||
+           splittedInput[i].equals("u") ||
+           splittedInput[i].equals("U") ){
         splittedInput[i] = "-";
       }
       newInput = newInput + splittedInput[i];
