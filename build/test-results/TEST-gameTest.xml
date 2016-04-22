@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="gameTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-04-22T06:39:14" hostname="Lakis-Air.home" time="0.003">
+  <properties/>
+  <testcase name="changeVowel_changeOneVowelAtoHyphen_String" classname="gameTest" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

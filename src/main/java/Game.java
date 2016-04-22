@@ -27,7 +27,18 @@ public class Game {
   // }
 
   public static String changeVowel(String input) {
-    return "hello";
+    String[] splittedInput = input.split("");
+    String newInput = "";
+
+    for(Integer i = 0; i < splittedInput.length; i++){
+      if(splittedInput[i].equals("a")){
+        splittedInput[i] = "-";
+      }
+      newInput = newInput + splittedInput[i];
+    }
+
+    input = newInput;
+    return input;
   }
 
 }
