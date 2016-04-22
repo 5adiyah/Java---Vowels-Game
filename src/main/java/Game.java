@@ -14,17 +14,17 @@ public class Game {
       return new ModelAndView(model, "templates/layout.vtl");
     }, new VelocityTemplateEngine());
 
-    // get("/detector", (request, response) -> {
-    //   Map<String, Object> model = new HashMap<String, Object>();
-    //
-    //   String userInput = request.queryParams("number");
-    //   NumbersToWords newNumbers = new NumbersToWords();
-    //   String convertedNumber = newNumbers.integerConverter(userInput);
-    //   model.put("convertedNumber", convertedNumber);
-    //
-    //   model.put("template", "templates/detector.vtl");
-    //   return new ModelAndView(model, "templates/layout.vtl");
-    // }, new VelocityTemplateEngine());
+    get("/detector", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+
+      String userInput = request.queryParams("phrase");
+      Game changeVowel = new Game();
+      String phrase = Game.changeVowel(userInput);
+      model.put("phrase", phrase);
+
+      model.put("template", "templates/detector.vtl");
+      return new ModelAndView(model, "templates/layout.vtl");
+    }, new VelocityTemplateEngine());
   }
 
   public static String changeVowel(String input) {
@@ -43,12 +43,13 @@ public class Game {
            splittedInput[i].equals("u") ||
            splittedInput[i].equals("U") ){
         splittedInput[i] = "-";
+      } else if(splittedInput[i].equals(" ")){
+        splittedInput[i] = "               ";
       }
       newInput = newInput + splittedInput[i];
     }
 
     input = newInput;
-    System.out.println(input);
     return input;
   }
 
