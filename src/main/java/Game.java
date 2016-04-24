@@ -8,36 +8,48 @@ import static spark.Spark.*;
 public class Game {
   public static void main(String[] args) {
     staticFileLocation("/public");
+    String layout = "templates/layout.vtl";
+
     get("/", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       model.put("template", "templates/home.vtl");
-      return new ModelAndView(model, "templates/layout.vtl");
+      return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    get("/detector", (request, response) -> {
+    post("/detector", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
 
-      String userInput = request.queryParams("phrase");
-      Game changeVowel = new Game();
-      String phrase = Game.changeVowel(userInput);
-      model.put("phrase", phrase);
+      String firstInput = request.queryParams("phrase");
+      request.session().attribute("phrase", firstInput);
 
       model.put("template", "templates/detector.vtl");
-      return new ModelAndView(model, "templates/layout.vtl");
+
+      Game newGame = new Game();
+      String phrase = newGame.changeVowel(firstInput);
+      model.put("phrase", phrase);
+
+      return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
     get("/guess", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
-
-      String guessPhrase = request.queryParams("guess");
-      String originalPhrase = request.queryParams("phrase");
-      Game changeVowel = new Game();
-      Boolean guess = Game.checkGuess(originalPhrase, guessPhrase);
-      model.put("guess", guess);
-
       model.put("template", "templates/guess.vtl");
-      return new ModelAndView(model, "templates/layout.vtl");
+      request.session().attribute("phrase");
+
+      String firstInput = request.session().attribute("phrase");
+      String secondInput = request.queryParams("guess");
+      // String original = request.session().attribute("phrase");
+
+      model.put("secondInput", secondInput);
+      model.put("phrase", request.session().attribute("phrase"));
+
+      Game checkInput = new Game();
+      Boolean results = checkInput.checkGuess(firstInput, secondInput);
+
+      model.put("results", results);
+      return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
+
   }
 
   public static String changeVowel(String input) {
