@@ -32,6 +32,10 @@ public class AppTest extends FluentTest {
 
   @Test
   public void checkGuess() {
+    goTo("http://localhost:4567/");
+    fill("#phrase").with("Hello");
+    submit(".button");
+    assertThat(pageSource()).contains("My Guess");
     goTo("http://localhost:4567/detector");
     fill("#guess").with("Hello");
     submit(".button");

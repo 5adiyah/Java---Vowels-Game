@@ -3,7 +3,7 @@ apply plugin: 'application'
 
 archivesBaseName = "VowelsGame2"
 version = '1.0'
-mainClassName = "Game"
+mainClassName = "App"
 
 repositories {
   mavenCentral()
